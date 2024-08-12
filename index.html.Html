@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>La Inteligencia Artificial</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Reseteo básico de márgenes y rellenos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        h1, h2, h3 {
+            color: red;
+        }
+
+        /* Estilo del menú de navegación */
+        nav {
+            background-color: #333;
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 14px 20px;
+            display: inline-block;
+        }
+
+        nav ul li a:hover {
+            background-color: red;
+        }
+
+        /* Estilos de clase y selectores agrupados */
+        .texto-destacado {
+            color: white;
+            font-weight: bold;
+        }
+
+        #introduccion {
+            font-size: 1.2em;
+        }
+
+        /* Selector descendiente */
+        nav ul li ul {
+            display: none;
+            position: absolute;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        /* Estilos de layout */
+        header {
+            background-color: #444;
+            color: white;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        header div {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.5em;
+            font-weight: 700;
+        }
+
+        header img {
+            max-width: 100px; /* Ajusta el tamaño máximo de la imagen si es necesario */
+            height: auto;
+            margin-left: 10px; /* Espacio entre el texto y la imagen */
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        main {
+            display: flex;
+            padding: 20px;
+            gap: 20px;
+        }
+
+        section {
+            flex: 3;
+        }
+
+        aside {
+            flex: 1;
+            background-color: #555;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        aside .autor {
+            margin-bottom: 10px;
+            background-color: #444;
+            padding: 10px;
+        }
+
+        aside img {
+            width: 100%; /* La imagen ocupará todo el ancho del aside */
+            height: auto;
+        }
+
+        /* Estilo para la tabla */
+        .custom-table {
+            background-color: black;
+            color: white;
+            border: 1px solid white;
+        }
+
+        .custom-table th {
+            background-color: black;
+            color: red;
+            border: 1px solid white;
+        }
+
+        .custom-table td {
+            border: 1px solid white;
+        }
+
+        .accordion-button {
+            background-color: black;
+            color: red;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: red;
+            color: white;
+        }
+
+        .accordion-body {
+            background-color: black;
+            color: white;
+        }
+
+        .accordion-item {
+            background-color: black;
+        }
+
+        .accordion-header {
+            background-color: black;
+        }
+
+        .imagen-indicacion {
+            color: lime;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div>Análisis de la Inteligencia Artificial</div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Dall-e_3_%28jan_%2724%29_artificial_intelligence_icon.png/220px-Dall-e_3_%28jan_%2724%29_artificial_intelligence_icon.png" alt="Icono de IA">
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#que-es">Qué es la IA</a></li>
+            <li><a href="#importancia">Importancia</a></li>
+            <li><a href="#etica">Ética</a></li>
+            <li><a href="#autor">Autor</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <!-- Añadir tabla aquí -->
+            <table class="table custom-table">
+                <thead>
+                    <tr>
+                        <th scope="col">Ventajas</th>
+                        <th scope="col">Desventajas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Mejora de eficiencia</td>
+                        <td>Posibles sesgos</td>
+                    </tr>
+                    <tr>
+                        <td>Optimización de recursos</td>
+                        <td>Preocupaciones de privacidad</td>
+                    </tr>
+                    <tr>
+                        <td>Avances en medicina</td>
+                        <td>Pérdida de empleos</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h1 id="introduccion">La Inteligencia Artificial</h1>
+            <article id="que-es">
+                <p class="texto-destacado">La Inteligencia Artificial (IA) es un campo de la informática dedicado al desarrollo de sistemas capaces de realizar tareas que normalmente requieren de la inteligencia humana. Esto incluye actividades como el reconocimiento de voz, la toma de decisiones, la traducción de idiomas y mucho más. La IA se basa en algoritmos avanzados y grandes volúmenes de datos para aprender y mejorar con el tiempo. El término «inteligencia artificial» fue acuñado por John McCarthy en 1956 y ha evolucionado significativamente desde entonces. En la actualidad, la IA no solo abarca estos campos, sino que también se extiende a áreas como la visión por computadora, la generación de lenguaje natural y la robótica. Por ejemplo, los coches autónomos utilizan la IA para interpretar datos de sensores y tomar decisiones en tiempo real. Además, la IA está detrás de muchos servicios en línea, como los motores de recomendación que nos sugieren qué películas ver o qué productos comprar. La capacidad de la IA para procesar y analizar grandes cantidades de datos también ha llevado a avances en la investigación científica, permitiendo descubrimientos que antes eran inimaginables.</p>
+            </article>
+            <article id="importancia">
+                <h2>La importancia de la IA para el ser humano</h2>
+                <p>La IA juega un papel fundamental en la vida moderna. Mejora la eficiencia en diversos sectores como la salud, el transporte y la educación. Los sistemas de IA pueden ayudar a diagnosticar enfermedades, optimizar rutas de transporte y personalizar el aprendizaje. Además, la IA tiene el potencial de revolucionar industrias enteras, aumentando la productividad y creando nuevas oportunidades económicas. En el ámbito de la salud, la IA se utiliza para analizar imágenes médicas, predecir brotes de enfermedades y desarrollar tratamientos personalizados. Los sistemas de IA mejoran la gestión del tráfico y la logística, optimizando rutas y reduciendo costos. En el sector educativo, las herramientas de IA pueden adaptarse a las necesidades de cada estudiante, personalizando el contenido y el ritmo de aprendizaje. En la industria, la IA se utiliza para mejorar la eficiencia de la producción, reducir el desperdicio y desarrollar nuevos productos innovadores. Además, la IA está impulsando la investigación en energías renovables y sostenibilidad, ayudando a optimizar el uso de recursos naturales y reducir el impacto ambiental de las actividades humanas.</p>
+            </article>
+            <article id="etica">
+                <h2>La ética y la regulación de la IA</h2>
+                <p>La ética y la regulación de la IA son cruciales para asegurar que el desarrollo y el uso de estas tecnologías sean seguros y beneficiosos para la sociedad. Es esencial abordar cuestiones como la privacidad, la transparencia y la equidad para evitar sesgos y discriminación. Además, la implementación de políticas y regulaciones adecuadas puede ayudar a mitigar riesgos y garantizar que la IA se utilice de manera responsable. La ética en la IA implica considerar el impacto de estas tecnologías en la vida humana y en la sociedad en general, asegurando que se utilicen de manera que respeten los derechos y la dignidad de las personas. La regulación de la IA debe adaptarse a los rápidos avances tecnológicos, estableciendo marcos legales que protejan a los individuos y fomenten la innovación responsable. Los debates sobre la ética y la regulación de la IA son fundamentales para moldear el futuro de esta tecnología y asegurar que se utilice de manera que beneficie a la humanidad en su conjunto.</p>
+            </article>
+            <section class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Sección de ejemplos
+                        </button>
+                    </h2>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>Esto es un ejemplo de acordeón</strong> La inteligencia artificial tiene el potencial de transformar la manera en que vivimos y trabajamos, pero también plantea desafíos éticos y de regulación que deben ser abordados para asegurar un futuro beneficioso para todos.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Sección de impacto
+                        </button>
+                    </h2>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            <strong>Impacto de la IA</strong> La IA tiene el potencial de mejorar la eficiencia en diversos sectores, pero también requiere una consideración cuidadosa de sus implicaciones éticas y sociales.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <aside>
+            <div class="autor">
+                <h2>Autor</h2>
+                <p>Este manual fue creado por Juan Sebastián Hernández. Hola, mi nombre es Sebastián y es un gusto que estés leyendo este sitio web. Soy un estudiante de 10° en Skolmi y, aunque no soy un experto, semana a semana he venido mejorando mi sitio web. Es un placer tenerte aquí y espero que te sea de ayuda.</p>
+            </div>
+        </aside>
+    </main>
+    <footer>
+        <p>Todos los derechos reservados &copy; 2024</p>
+    </footer>
+    <!-- boostrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
